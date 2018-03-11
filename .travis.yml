@@ -2,6 +2,9 @@ sudo: required
 
 language: java
 
+# Skipping the default Gradle installation step 
+install: true
+
 service:
   - docker
 
