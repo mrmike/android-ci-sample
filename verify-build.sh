@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 
-docker run --rm  -v $(pwd):/workspace -w /workspace michalmoczulski/simple-android-docker gradle clean build
+if [ -n "$DOCKER_GRADLE_CACHE" ]
+then
+        docker run --rm  \
+                -v $DOCKER_GRADLE_CACHE:/docker-gradle-cache \
+                -e "GRADLE_USER_HOME=/docker-gradle-cache" \
+                -v $(pwd):/workspace \
+                -w /workspace \
+                michalmoczulski/simple-android-docker gradle clean build
+else
+        docker run --rm  \
+                -v $(pwd):/workspace \
+                -w /workspace \
+                michalmoczulski/simple-android-docker gradle clean build
+fi
