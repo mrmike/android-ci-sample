@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: michalmoczulski/simple-android-docker
+
+    working_directory: ~/
+
+    steps:
+      - checkout
+      - run: gradle clean build
