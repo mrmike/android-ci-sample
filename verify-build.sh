@@ -9,12 +9,12 @@ then
                 -e "GRADLE_USER_HOME=/docker-gradle-cache" \
                 -v $(pwd):/workspace \
                 -w /workspace \
-                michalmoczulski/simple-android-docker gradle clean build
+                michalmoczulski/simple-android-docker:latest gradle clean build
 else
         echo "Consider setting DOCKER_GRADLE_CACHE variable for gradle caching"
 
         docker run --rm  \
                 -v $(pwd):/workspace \
                 -w /workspace \
-                michalmoczulski/simple-android-docker gradle clean build
+                michalmoczulski/simple-android-docker:latest gradle clean build
 fi
