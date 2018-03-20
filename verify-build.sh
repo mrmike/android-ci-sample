@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 if [ -n "$DOCKER_GRADLE_CACHE" ]
 then
         echo "Running docker with gradle cache"
