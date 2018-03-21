@@ -2,7 +2,7 @@ sudo: required
 
 language: java
 
-# Skipping the default Gradle installation step 
+# Skipping the default Gradle installation step. Gradle is provided with simple-android-docker image.
 install: true
 
 service:
